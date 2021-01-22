@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DescuentosDS" targetNamespace="http://tempuri.org/DescuentosDS.xsd" xmlns:mstns="http://tempuri.org/DescuentosDS.xsd" xmlns="http://tempuri.org/DescuentosDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DescuentosDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DescuentosDS" msprop:Generator_UserDSName="DescuentosDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DescuentosDS" msprop:Generator_TableClassName="DescuentosDSDataTable" msprop:Generator_TableVarName="tableDescuentosDS" msprop:Generator_RowChangedName="DescuentosDSRowChanged" msprop:Generator_TablePropName="_DescuentosDS" msprop:Generator_RowDeletingName="DescuentosDSRowDeleting" msprop:Generator_RowChangingName="DescuentosDSRowChanging" msprop:Generator_RowEvHandlerName="DescuentosDSRowChangeEventHandler" msprop:Generator_RowDeletedName="DescuentosDSRowDeleted" msprop:Generator_RowClassName="DescuentosDSRow" msprop:Generator_UserTableName="DescuentosDS" msprop:Generator_RowEvArgName="DescuentosDSRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_descuento" msprop:Generator_ColumnVarNameInTable="columnid_descuento" msprop:Generator_ColumnPropNameInRow="id_descuento" msprop:Generator_ColumnPropNameInTable="id_descuentoColumn" msprop:Generator_UserColumnName="id_descuento" type="xs:string" minOccurs="0" />
+              <xs:element name="n_descuento" msprop:Generator_ColumnVarNameInTable="columnn_descuento" msprop:Generator_ColumnPropNameInRow="n_descuento" msprop:Generator_ColumnPropNameInTable="n_descuentoColumn" msprop:Generator_UserColumnName="n_descuento" type="xs:string" minOccurs="0" />
+              <xs:element name="monto" msprop:Generator_ColumnVarNameInTable="columnmonto" msprop:Generator_ColumnPropNameInRow="monto" msprop:Generator_ColumnPropNameInTable="montoColumn" msprop:Generator_UserColumnName="monto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

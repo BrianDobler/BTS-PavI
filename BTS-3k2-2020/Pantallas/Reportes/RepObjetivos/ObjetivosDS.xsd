@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ObjetivosDS" targetNamespace="http://tempuri.org/ObjetivosDS.xsd" xmlns:mstns="http://tempuri.org/ObjetivosDS.xsd" xmlns="http://tempuri.org/ObjetivosDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ObjetivosDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ObjetivosDS" msprop:Generator_UserDSName="ObjetivosDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ObjetivosDS" msprop:Generator_TableClassName="ObjetivosDSDataTable" msprop:Generator_TableVarName="tableObjetivosDS" msprop:Generator_RowChangedName="ObjetivosDSRowChanged" msprop:Generator_TablePropName="_ObjetivosDS" msprop:Generator_RowDeletingName="ObjetivosDSRowDeleting" msprop:Generator_RowChangingName="ObjetivosDSRowChanging" msprop:Generator_RowEvHandlerName="ObjetivosDSRowChangeEventHandler" msprop:Generator_RowDeletedName="ObjetivosDSRowDeleted" msprop:Generator_RowClassName="ObjetivosDSRow" msprop:Generator_UserTableName="ObjetivosDS" msprop:Generator_RowEvArgName="ObjetivosDSRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_objetivo" msprop:Generator_ColumnVarNameInTable="columnid_objetivo" msprop:Generator_ColumnPropNameInRow="id_objetivo" msprop:Generator_ColumnPropNameInTable="id_objetivoColumn" msprop:Generator_UserColumnName="id_objetivo" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre_corto" msprop:Generator_ColumnVarNameInTable="columnnombre_corto" msprop:Generator_ColumnPropNameInRow="nombre_corto" msprop:Generator_ColumnPropNameInTable="nombre_cortoColumn" msprop:Generator_UserColumnName="nombre_corto" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre_largo" msprop:Generator_ColumnVarNameInTable="columnnombre_largo" msprop:Generator_ColumnPropNameInRow="nombre_largo" msprop:Generator_ColumnPropNameInTable="nombre_largoColumn" msprop:Generator_UserColumnName="nombre_largo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

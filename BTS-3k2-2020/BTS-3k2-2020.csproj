@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A78601ED-A1ED-41C4-BAD3-711C1744D7F2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BTS_3k2_2020</RootNamespace>
+    <AssemblyName>BTS-3k2-2020</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LogicaDeNegocio\CategoriaServicio.cs" />
+    <Compile Include="LogicaDeNegocio\CursoServicio.cs" />
+    <Compile Include="LogicaDeNegocio\ObjetivosServicio.cs" />
+    <Compile Include="LogicaDeNegocio\PerfilesServicio.cs" />
+    <Compile Include="LogicaDeNegocio\SueldosServicio.cs" />
+    <Compile Include="LogicaDeNegocio\UsuariosXCursosServicio.cs" />
+    <Compile Include="Modelos\Categoria.cs" />
+    <Compile Include="Modelos\Curso.cs" />
+    <Compile Include="Modelos\Descuento.cs" />
+    <Compile Include="Modelos\Objetivo.cs" />
+    <Compile Include="Modelos\HistoricoSueldo.cs" />
+    <Compile Include="Modelos\Perfil.cs" />
+    <Compile Include="Modelos\Sueldo.cs" />
+    <Compile Include="Modelos\Usuario.cs" />
+    <Compile Include="Modelos\UsuarioXCurso.cs" />
+    <Compile Include="Pantallas\Asignaciones\FrmAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Asignaciones\FrmAsignaciones.Designer.cs">
+      <DependentUpon>FrmAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Asignaciones\FrmAsignarAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Asignaciones\FrmAsignarAsignacion.Designer.cs">
+      <DependentUpon>FrmAsignarAsignacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Asignaciones\FrmAsigXSueldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Asignaciones\FrmAsigXSueldo.Designer.cs">
+      <DependentUpon>FrmAsigXSueldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Asignaciones\FrmModificarAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Asignaciones\FrmModificarAsignacion.Designer.cs">
+      <DependentUpon>FrmModificarAsignacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\CargaDeFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\CargaDeFormulario.Designer.cs">
+      <DependentUpon>CargaDeFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Categorias\Categorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Categorias\Categorias.Designer.cs">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Categorias\ModificarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Categorias\ModificarCategoria.Designer.cs">
+      <DependentUpon>ModificarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Cursos\FrmAsignarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Cursos\FrmAsignarCurso.Designer.cs">
+      <DependentUpon>FrmAsignarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Cursos\FrmCursoXCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Cursos\FrmCursoXCategoria.Designer.cs">
+      <DependentUpon>FrmCursoXCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Cursos\ModificarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Cursos\ModificarCurso.Designer.cs">
+      <DependentUpon>ModificarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Cursos\CursosFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Cursos\CursosFrm.Designer.cs">
+      <DependentUpon>CursosFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Cursos\CursoNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Cursos\CursoNuevo.Designer.cs">
+      <DependentUpon>CursoNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Descuentos\FrmAsignarDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Descuentos\FrmAsignarDescuento.Designer.cs">
+      <DependentUpon>FrmAsignarDescuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Descuentos\FrmDescuentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Descuentos\FrmDescuentos.designer.cs">
+      <DependentUpon>FrmDescuentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Descuentos\FrmDescXSueldocs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Descuentos\FrmDescXSueldocs.Designer.cs">
+      <DependentUpon>FrmDescXSueldocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Descuentos\FrmModificarDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Descuentos\FrmModificarDescuento.designer.cs">
+      <DependentUpon>FrmModificarDescuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\FrmLogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\FrmLogo.Designer.cs">
+      <DependentUpon>FrmLogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\FrmMenuV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\FrmMenuV2.Designer.cs">
+      <DependentUpon>FrmMenuV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Objetivos\FrmModificarObjetivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Objetivos\FrmModificarObjetivo.Designer.cs">
+      <DependentUpon>FrmModificarObjetivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Objetivos\FrmObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Objetivos\FrmObjetivos.Designer.cs">
+      <DependentUpon>FrmObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Perfiles2\FrmModificarPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Perfiles2\FrmModificarPerfil.Designer.cs">
+      <DependentUpon>FrmModificarPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Perfiles2\FrmPerfilesV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Perfiles2\FrmPerfilesV2.Designer.cs">
+      <DependentUpon>FrmPerfilesV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstAsignaciones\EstAsignacionesDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstAsignacionesDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstAsignaciones\FrmEstAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstAsignaciones\FrmEstAsignaciones.Designer.cs">
+      <DependentUpon>FrmEstAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstCategorias\EstCategoriasDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstCategoriasDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstCategorias\FrmEstCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstCategorias\FrmEstCategorias.Designer.cs">
+      <DependentUpon>FrmEstCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstCursos\EstCursosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstCursosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstCursos\FrmEstCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstCursos\FrmEstCursos.Designer.cs">
+      <DependentUpon>FrmEstCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstDescuentos\EstDescuentosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstDescuentosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstDescuentos\FrmEstDescuentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstDescuentos\FrmEstDescuentos.Designer.cs">
+      <DependentUpon>FrmEstDescuentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstObjetivos\EstObjetivosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstObjetivosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstObjetivos\FrmEstObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstObjetivos\FrmEstObjetivos.Designer.cs">
+      <DependentUpon>FrmEstObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstPerfiles\EstPerfilesDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstPerfilesDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstPerfiles\FrmEstPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstPerfiles\FrmEstPerfiles.Designer.cs">
+      <DependentUpon>FrmEstPerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstSueldos\EstSueldosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstSueldosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstSueldos\FrmEstSueldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstSueldos\FrmEstSueldos.Designer.cs">
+      <DependentUpon>FrmEstSueldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstUsuarios\EstUsuariosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstUsuariosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstUsuarios\FrmEstUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\EstUsuarios\FrmEstUsuarios.Designer.cs">
+      <DependentUpon>FrmEstUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\Informes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\Informes.Designer.cs">
+      <DependentUpon>Informes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepAsignaciones\AsignacionesDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsignacionesDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepAsignaciones\FrmListadoAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepAsignaciones\FrmListadoAsignaciones.Designer.cs">
+      <DependentUpon>FrmListadoAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepCategorias\CategoriasDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoriasDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepCategorias\FrmListadoCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepCategorias\FrmListadoCategorias.Designer.cs">
+      <DependentUpon>FrmListadoCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepCursos\CursosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CursosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepCursos\FrmListadoCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepCursos\FrmListadoCursos.Designer.cs">
+      <DependentUpon>FrmListadoCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepDescuento\DescuentosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DescuentosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepDescuento\FrmListadoDescuentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepDescuento\FrmListadoDescuentos.Designer.cs">
+      <DependentUpon>FrmListadoDescuentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepObjetivos\FrmListadoObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepObjetivos\FrmListadoObjetivos.Designer.cs">
+      <DependentUpon>FrmListadoObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepObjetivos\ObjetivosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ObjetivosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepPerfiles\FrmListadoPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepPerfiles\FrmListadoPerfiles.Designer.cs">
+      <DependentUpon>FrmListadoPerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepPerfiles\PerfilesDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PerfilesDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepSueldos\FrmListadoSueldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepSueldos\FrmListadoSueldos.Designer.cs">
+      <DependentUpon>FrmListadoSueldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepSueldos\SueldosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SueldosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepUsuarios\FrmListadoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepUsuarios\FrmListadoUsuarios.Designer.cs">
+      <DependentUpon>FrmListadoUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes\RepUsuarios\UsuariosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuariosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Sueldos\FrmConfirmarCredencial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Sueldos\FrmConfirmarCredencial.Designer.cs">
+      <DependentUpon>FrmConfirmarCredencial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Sueldos\FrmEliminarSueldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Sueldos\FrmEliminarSueldo.Designer.cs">
+      <DependentUpon>FrmEliminarSueldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Sueldos\FrmModificarSueldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Sueldos\FrmModificarSueldo.Designer.cs">
+      <DependentUpon>FrmModificarSueldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Sueldos\FrmSueldoNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Sueldos\FrmSueldoNuevo.Designer.cs">
+      <DependentUpon>FrmSueldoNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Sueldos\FrmSueldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Sueldos\FrmSueldos.Designer.cs">
+      <DependentUpon>FrmSueldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Sueldos\FrmVerDetalleSueldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Sueldos\FrmVerDetalleSueldo.Designer.cs">
+      <DependentUpon>FrmVerDetalleSueldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\UsuariosXCursos\FrmEliminarUsuarioXCurso1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\UsuariosXCursos\FrmEliminarUsuarioXCurso1.Designer.cs">
+      <DependentUpon>FrmEliminarUsuarioXCurso1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\UsuariosXCursos\FrmModificarUsuarioXCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\UsuariosXCursos\FrmModificarUsuarioXCurso.Designer.cs">
+      <DependentUpon>FrmModificarUsuarioXCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\UsuariosXCursos\FrmNuevoUsuarioXCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\UsuariosXCursos\FrmNuevoUsuarioXCurso.Designer.cs">
+      <DependentUpon>FrmNuevoUsuarioXCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\UsuariosXCursos\FrmUsuariosXCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\UsuariosXCursos\FrmUsuariosXCursos.Designer.cs">
+      <DependentUpon>FrmUsuariosXCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Usuarios\FrmEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Usuarios\FrmEliminar.Designer.cs">
+      <DependentUpon>FrmEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Usuarios\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Usuarios\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Usuarios\FrmModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Usuarios\FrmModificar.Designer.cs">
+      <DependentUpon>FrmModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Usuarios\FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Usuarios\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Usuarios\NuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Usuarios\NuevoUsuario.Designer.cs">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\_usuario.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RespositoriosDAO\AsignacionesRepositorio.cs" />
+    <Compile Include="RespositoriosDAO\CategoriaRepositorio.cs" />
+    <Compile Include="RespositoriosDAO\CursoPorCategoriaRepositorio.cs" />
+    <Compile Include="RespositoriosDAO\CursosRepositoris.cs" />
+    <Compile Include="RespositoriosDAO\DBHelper.cs" />
+    <Compile Include="RespositoriosDAO\DescuentosRepositorio.cs" />
+    <Compile Include="RespositoriosDAO\ObjetivosRepositorio.cs" />
+    <Compile Include="RespositoriosDAO\PerfilesRepositorio.cs" />
+    <Compile Include="RespositoriosDAO\ReportesRepositorio.cs" />
+    <Compile Include="RespositoriosDAO\SueldoAsignacionRepositorio.cs" />
+    <Compile Include="RespositoriosDAO\SueldoDescuentosRepositorio.cs" />
+    <Compile Include="RespositoriosDAO\SueldosRepositorio.cs" />
+    <Compile Include="RespositoriosDAO\UsuariosRepositorio.cs" />
+    <Compile Include="LogicaDeNegocio\UsuarioServicio.cs" />
+    <Compile Include="RespositoriosDAO\UsuariosXCursosRepositorio.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Utils\FormUtils.cs" />
+    <EmbeddedResource Include="Pantallas\Asignaciones\FrmAsignaciones.resx">
+      <DependentUpon>FrmAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Asignaciones\FrmAsignarAsignacion.resx">
+      <DependentUpon>FrmAsignarAsignacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Asignaciones\FrmAsigXSueldo.resx">
+      <DependentUpon>FrmAsigXSueldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Asignaciones\FrmModificarAsignacion.resx">
+      <DependentUpon>FrmModificarAsignacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\CargaDeFormulario.resx">
+      <DependentUpon>CargaDeFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Categorias\Categorias.resx">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Categorias\ModificarCategoria.resx">
+      <DependentUpon>ModificarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Cursos\FrmAsignarCurso.resx">
+      <DependentUpon>FrmAsignarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Cursos\FrmCursoXCategoria.resx">
+      <DependentUpon>FrmCursoXCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Cursos\ModificarCurso.resx">
+      <DependentUpon>ModificarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Cursos\CursosFrm.resx">
+      <DependentUpon>CursosFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Cursos\CursoNuevo.resx">
+      <DependentUpon>CursoNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Descuentos\FrmAsignarDescuento.resx">
+      <DependentUpon>FrmAsignarDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Descuentos\FrmDescuentos.resx">
+      <DependentUpon>FrmDescuentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Descuentos\FrmDescXSueldocs.resx">
+      <DependentUpon>FrmDescXSueldocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Descuentos\FrmModificarDescuento.resx">
+      <DependentUpon>FrmModificarDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\FrmLogo.resx">
+      <DependentUpon>FrmLogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\FrmMenuV2.resx">
+      <DependentUpon>FrmMenuV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Objetivos\FrmModificarObjetivo.resx">
+      <DependentUpon>FrmModificarObjetivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Objetivos\FrmObjetivos.resx">
+      <DependentUpon>FrmObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Perfiles2\FrmModificarPerfil.resx">
+      <DependentUpon>FrmModificarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Perfiles2\FrmPerfilesV2.resx">
+      <DependentUpon>FrmPerfilesV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\EstAsignaciones\FrmEstAsignaciones.resx">
+      <DependentUpon>FrmEstAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\EstAsignaciones\InfEstAsig.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\EstCategorias\FrmEstCategorias.resx">
+      <DependentUpon>FrmEstCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\EstCategorias\InfEstCat.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\EstCursos\FrmEstCursos.resx">
+      <DependentUpon>FrmEstCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\EstCursos\InfEstCur.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\EstDescuentos\FrmEstDescuentos.resx">
+      <DependentUpon>FrmEstDescuentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\EstDescuentos\InfEstDesc.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\EstObjetivos\FrmEstObjetivos.resx">
+      <DependentUpon>FrmEstObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\EstObjetivos\InfEstObj.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\EstPerfiles\FrmEstPerfiles.resx">
+      <DependentUpon>FrmEstPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\EstPerfiles\InfEstPerf.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\EstSueldos\FrmEstSueldos.resx">
+      <DependentUpon>FrmEstSueldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\EstSueldos\InfEstSueldo.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\EstUsuarios\FrmEstUsuarios.resx">
+      <DependentUpon>FrmEstUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\EstUsuarios\InfEstUs.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\Informes.resx">
+      <DependentUpon>Informes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\RepAsignaciones\FrmListadoAsignaciones.resx">
+      <DependentUpon>FrmListadoAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\RepAsignaciones\InformeAsignaciones.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\RepCategorias\FrmListadoCategorias.resx">
+      <DependentUpon>FrmListadoCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\RepCategorias\InformeCategorias.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\RepCursos\FrmListadoCursos.resx">
+      <DependentUpon>FrmListadoCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\RepCursos\InformeCursos.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\RepDescuento\FrmListadoDescuentos.resx">
+      <DependentUpon>FrmListadoDescuentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\RepDescuento\InformeDescuentos.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\RepObjetivos\FrmListadoObjetivos.resx">
+      <DependentUpon>FrmListadoObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\RepObjetivos\InformeObjetivos.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\RepPerfiles\FrmListadoPerfiles.resx">
+      <DependentUpon>FrmListadoPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\RepPerfiles\InformePerfiles.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\RepSueldos\FrmListadoSueldos.resx">
+      <DependentUpon>FrmListadoSueldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\RepSueldos\InformeSueldos.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\RepUsuarios\FrmListadoUsuarios.resx">
+      <DependentUpon>FrmListadoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes\RepUsuarios\InformeUsuarios.rdlc" />
+    <EmbeddedResource Include="Pantallas\Sueldos\FrmConfirmarCredencial.resx">
+      <DependentUpon>FrmConfirmarCredencial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Sueldos\FrmEliminarSueldo.resx">
+      <DependentUpon>FrmEliminarSueldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Sueldos\FrmModificarSueldo.resx">
+      <DependentUpon>FrmModificarSueldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Sueldos\FrmSueldoNuevo.resx">
+      <DependentUpon>FrmSueldoNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Sueldos\FrmSueldos.resx">
+      <DependentUpon>FrmSueldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Sueldos\FrmVerDetalleSueldo.resx">
+      <DependentUpon>FrmVerDetalleSueldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\UsuariosXCursos\FrmEliminarUsuarioXCurso1.resx">
+      <DependentUpon>FrmEliminarUsuarioXCurso1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\UsuariosXCursos\FrmModificarUsuarioXCurso.resx">
+      <DependentUpon>FrmModificarUsuarioXCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\UsuariosXCursos\FrmNuevoUsuarioXCurso.resx">
+      <DependentUpon>FrmNuevoUsuarioXCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\UsuariosXCursos\FrmUsuariosXCursos.resx">
+      <DependentUpon>FrmUsuariosXCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Usuarios\FrmEliminar.resx">
+      <DependentUpon>FrmEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Usuarios\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Usuarios\FrmModificar.resx">
+      <DependentUpon>FrmModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Usuarios\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Usuarios\NuevoUsuario.resx">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Pantallas\Reportes\EstAsignaciones\EstAsignacionesDS.xsc">
+      <DependentUpon>EstAsignacionesDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstAsignaciones\EstAsignacionesDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstAsignacionesDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\EstAsignaciones\EstAsignacionesDS.xss">
+      <DependentUpon>EstAsignacionesDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstCategorias\EstCategoriasDS.xsc">
+      <DependentUpon>EstCategoriasDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstCategorias\EstCategoriasDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstCategoriasDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\EstCategorias\EstCategoriasDS.xss">
+      <DependentUpon>EstCategoriasDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstCursos\EstCursosDS.xsc">
+      <DependentUpon>EstCursosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstCursos\EstCursosDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstCursosDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\EstCursos\EstCursosDS.xss">
+      <DependentUpon>EstCursosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstDescuentos\EstDescuentosDS.xsc">
+      <DependentUpon>EstDescuentosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstDescuentos\EstDescuentosDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstDescuentosDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\EstDescuentos\EstDescuentosDS.xss">
+      <DependentUpon>EstDescuentosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstObjetivos\EstObjetivosDS.xsc">
+      <DependentUpon>EstObjetivosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstObjetivos\EstObjetivosDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstObjetivosDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\EstObjetivos\EstObjetivosDS.xss">
+      <DependentUpon>EstObjetivosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstPerfiles\EstPerfilesDS.xsc">
+      <DependentUpon>EstPerfilesDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstPerfiles\EstPerfilesDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstPerfilesDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\EstPerfiles\EstPerfilesDS.xss">
+      <DependentUpon>EstPerfilesDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstSueldos\EstSueldosDS.xsc">
+      <DependentUpon>EstSueldosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstSueldos\EstSueldosDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstSueldosDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\EstSueldos\EstSueldosDS.xss">
+      <DependentUpon>EstSueldosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstUsuarios\EstUsuariosDS.xsc">
+      <DependentUpon>EstUsuariosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\EstUsuarios\EstUsuariosDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstUsuariosDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\EstUsuarios\EstUsuariosDS.xss">
+      <DependentUpon>EstUsuariosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepAsignaciones\AsignacionesDS.xsc">
+      <DependentUpon>AsignacionesDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepAsignaciones\AsignacionesDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AsignacionesDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\RepAsignaciones\AsignacionesDS.xss">
+      <DependentUpon>AsignacionesDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepCategorias\CategoriasDS.xsc">
+      <DependentUpon>CategoriasDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepCategorias\CategoriasDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CategoriasDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\RepCategorias\CategoriasDS.xss">
+      <DependentUpon>CategoriasDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepCursos\CursosDS.xsc">
+      <DependentUpon>CursosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepCursos\CursosDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CursosDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\RepCursos\CursosDS.xss">
+      <DependentUpon>CursosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepDescuento\DescuentosDS.xsc">
+      <DependentUpon>DescuentosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepDescuento\DescuentosDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DescuentosDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\RepDescuento\DescuentosDS.xss">
+      <DependentUpon>DescuentosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepObjetivos\ObjetivosDS.xsc">
+      <DependentUpon>ObjetivosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepObjetivos\ObjetivosDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ObjetivosDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\RepObjetivos\ObjetivosDS.xss">
+      <DependentUpon>ObjetivosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepPerfiles\PerfilesDS.xsc">
+      <DependentUpon>PerfilesDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepPerfiles\PerfilesDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PerfilesDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\RepPerfiles\PerfilesDS.xss">
+      <DependentUpon>PerfilesDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepSueldos\SueldosDS.xsc">
+      <DependentUpon>SueldosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepSueldos\SueldosDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SueldosDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\RepSueldos\SueldosDS.xss">
+      <DependentUpon>SueldosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepUsuarios\UsuariosDS.xsc">
+      <DependentUpon>UsuariosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Pantallas\Reportes\RepUsuarios\UsuariosDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsuariosDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pantallas\Reportes\RepUsuarios\UsuariosDS.xss">
+      <DependentUpon>UsuariosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Recursos\avatar.jpg" />
+    <Content Include="Recursos\avatar_transparente.png" />
+    <Content Include="Recursos\AYUDA3.png" />
+    <Content Include="Recursos\bug.ico" />
+    <Content Include="Recursos\bug.jpg" />
+    <Content Include="Recursos\bug_transparente.png" />
+    <Content Include="Recursos\bug_transparente_redimensionado.png" />
+    <Content Include="Recursos\cancel.png" />
+    <Content Include="Recursos\cancelar.png" />
+    <Content Include="Recursos\candado.png" />
+    <Content Include="Recursos\development.png" />
+    <Content Include="Recursos\editar.png" />
+    <Content Include="Recursos\eliminar.png" />
+    <Content Include="Recursos\excel.png" />
+    <Content Include="Recursos\guardar.png" />
+    <Content Include="Recursos\investment.png" />
+    <Content Include="Recursos\layout.png" />
+    <Content Include="Recursos\LIBROS2.png" />
+    <Content Include="Recursos\logo_utn.ico" />
+    <Content Include="Recursos\magento-100.png" />
+    <Content Include="Recursos\maximize.png" />
+    <Content Include="Recursos\menu.png" />
+    <Content Include="Recursos\minimize.png" />
+    <Content Include="Recursos\nuevo.png" />
+    <Content Include="Recursos\OjoPass.png" />
+    <Content Include="Recursos\OjoPassBlue.png" />
+    <Content Include="Recursos\pantalla loading2.png" />
+    <Content Include="Recursos\pantalla loading3.png" />
+    <Content Include="Recursos\perfil-.png" />
+    <Content Include="Recursos\perfil.png" />
+    <Content Include="Recursos\Refrescar.png" />
+    <Content Include="Recursos\Refrescar1.png" />
+    <Content Include="Recursos\Refrescar2.png" />
+    <Content Include="Recursos\REPORTES2.png" />
+    <Content Include="Recursos\restaure.png" />
+    <Content Include="Recursos\search-50.png" />
+    <Content Include="Recursos\settings-50.png" />
+    <Content Include="Recursos\social-care.png" />
+    <Content Include="Recursos\Sueldo.png" />
+    <Content Include="Recursos\user.png" />
+    <Content Include="Recursos\utn png blanco.png" />
+    <Content Include="Recursos\utnprincipal3.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

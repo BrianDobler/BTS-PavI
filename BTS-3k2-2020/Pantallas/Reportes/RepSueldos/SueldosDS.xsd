@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SueldosDS" targetNamespace="http://tempuri.org/SueldosDS.xsd" xmlns:mstns="http://tempuri.org/SueldosDS.xsd" xmlns="http://tempuri.org/SueldosDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SueldosDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SueldosDS" msprop:Generator_UserDSName="SueldosDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SueldosDS" msprop:Generator_TableClassName="SueldosDSDataTable" msprop:Generator_TableVarName="tableSueldosDS" msprop:Generator_RowChangedName="SueldosDSRowChanged" msprop:Generator_TablePropName="_SueldosDS" msprop:Generator_RowDeletingName="SueldosDSRowDeleting" msprop:Generator_RowChangingName="SueldosDSRowChanging" msprop:Generator_RowEvHandlerName="SueldosDSRowChangeEventHandler" msprop:Generator_RowDeletedName="SueldosDSRowDeleted" msprop:Generator_RowClassName="SueldosDSRow" msprop:Generator_UserTableName="SueldosDS" msprop:Generator_RowEvArgName="SueldosDSRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_usuario" msprop:Generator_ColumnVarNameInTable="columnid_usuario" msprop:Generator_ColumnPropNameInRow="id_usuario" msprop:Generator_ColumnPropNameInTable="id_usuarioColumn" msprop:Generator_UserColumnName="id_usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="sueldo_bruto" msprop:Generator_ColumnVarNameInTable="columnsueldo_bruto" msprop:Generator_ColumnPropNameInRow="sueldo_bruto" msprop:Generator_ColumnPropNameInTable="sueldo_brutoColumn" msprop:Generator_UserColumnName="sueldo_bruto" type="xs:string" minOccurs="0" />
+              <xs:element name="nombreUsuario" msprop:Generator_ColumnVarNameInTable="columnnombreUsuario" msprop:Generator_ColumnPropNameInRow="nombreUsuario" msprop:Generator_ColumnPropNameInTable="nombreUsuarioColumn" msprop:Generator_UserColumnName="nombreUsuario" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
